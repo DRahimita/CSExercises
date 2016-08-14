@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +20,12 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            string inputStr = Console.ReadLine();
-            double inputDbl = Convert.ToDouble(inputStr);
-
-            //YOUR CODE HERE
-
+                  
+            Console.WriteLine("Key in any number, I will round it to 2 decimal points!");
+            double entryNumber = Convert.ToDouble(Console.ReadLine());
+           
+            Console.WriteLine("Your number now is {0:##0.00}", entryNumber);
+            Console.ReadLine();
         }
 
     }
