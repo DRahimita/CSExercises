@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +19,10 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
+            Console.WriteLine("Dinar Rahimita");
+            Console.WriteLine("e0046830@u.nus.edu");
+            Console.ReadLine();
+
         }
     }
 }
