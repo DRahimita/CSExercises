@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +15,22 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //PUT YOUR CODE HERE           
-        }
+            Console.WriteLine("Enter your number");
+            double entryNumber = Convert.ToDouble(Console.ReadLine());
+            double resultNumber = entryNumber * entryNumber;
 
-        public static double square(double x)
+            Console.WriteLine("{0} to the power of 2 is {1}", entryNumber, resultNumber);
+            Console.ReadLine();
+        }
+        /*Hi Hans, I don't understand the logic of the part below. While the code above works, I would like to know how to do it with
+        two different Main() methods (or 'code of blocks??' Sorry, I'm still catching up on the jargons)*/ 
+        
+        /*public static double square(double x)
         {
             //PUT YOUR CODE HERE
+
             return 0;
 
-        }
+        }*/
     }
 }
