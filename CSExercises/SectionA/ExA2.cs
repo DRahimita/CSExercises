@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,8 +16,10 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            string name = Console.ReadLine();
-            //YOUR CODE HERE
+            Console.WriteLine("What is your name?");
+            string name = Console.ReadLine();         
+            Console.WriteLine("Good Morning, {0}", name);
+            Console.ReadLine();
 
         }
     }
