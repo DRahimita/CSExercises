@@ -18,8 +18,9 @@ namespace CSExercises
             //YOUR CODE HERE
             Console.Write("How far have you traveled(in km)?");
             double input = Convert.ToDouble(Console.ReadLine());
-            double output = 2.4 + input * 0.4;
-            Console.WriteLine("Your taxi fare is ${0:###.#}", output);
+            double fare = 2.4 + input * 0.4;
+            double output = System.Math.Round(fare,1);
+            Console.WriteLine("Your taxi fare is ${0:###.00}", output);
             Console.ReadLine();
         }
 
