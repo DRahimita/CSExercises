@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +14,11 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("Key in any number, please");
+            double entryNumber = Convert.ToDouble(Console.ReadLine());
+            double resultNumber = System.Math.Sqrt(entryNumber);
+            Console.WriteLine("Square root of {0} is {1}", entryNumber, resultNumber);
+            Console.ReadLine();
         }
 
         public static double SQRT(double x)
