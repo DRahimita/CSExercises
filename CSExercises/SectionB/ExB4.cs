@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +14,21 @@ namespace CSExercises
     {
         public static void Main(string[] args)
         {
-            //YOUR CODE HERE
-
+            Console.WriteLine("What is the temperature (in Celsius)?");
+            double inputC = Convert.ToDouble(Console.ReadLine());
+            double outputF = (1.8 * inputC) + 32;
+            Console.WriteLine("The temperature is {0} Fahrenheit", outputF);
+            Console.ReadLine();
         }
+        
+        /*Hi Hans, I don't understand the logic of the part below. While the code above works, I would like to know how to do it with
+        two different Main() methods (or 'code of blocks??' Sorry, I'm still catching up on the jargons)*/
 
-        public static double ConvertToFahrenheit(double c)
+        /*public static double ConvertToFahrenheit(double c)
         {
             //YOUR CODE HERE - convert celcius to fahrenheit
             return 0;
 
-        }
+        }*/
     }
 }
