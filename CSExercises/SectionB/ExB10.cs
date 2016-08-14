@@ -20,13 +20,29 @@ namespace CSExercises
         public static void Main(string[] args)
         {
             //YOUR CODE HERE
+            Console.WriteLine("We are going to determine the area of a triangle with a, b and c side.\nKey in length figures, please");
+            Console.Write("a:");
+            double a = Convert.ToDouble(Console.ReadLine());
+            Console.Write("b:");
+            double b = Convert.ToDouble(Console.ReadLine());
+            Console.Write("c:");
+            double c = Convert.ToDouble(Console.ReadLine());
 
+            double s = (a + b + c) / 2;
+
+            double area = System.Math.Sqrt(s * (s - a) * (s - b) * (s - c));
+            Console.WriteLine("Area of the triangle is {0} unit(s)",area);
+
+            Console.ReadLine();
         }
+        /*Hi Hans, I don't understand the logic of the part below. While the code above works, I would like to know how to do it with
+        two different Main() methods (or 'code of blocks??' Sorry, I'm still catching up on the jargons)*/
 
-        public static double CalculateArea(double a, double b, double c)
+
+        /*public static double CalculateArea(double a, double b, double c)
         {
             //YOUR CODE HERE
             return 0;
-        }
+        }*/
     }
 }
