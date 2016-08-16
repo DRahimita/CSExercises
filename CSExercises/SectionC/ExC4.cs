@@ -22,15 +22,42 @@ namespace CSExercises
         {
 
             //Your code here
+            Console.Write("How far have you traveled (in km)?");
+            double distance = Convert.ToDouble(Console.ReadLine());
 
+            double fare = CalculateFare(distance);
 
+            Console.WriteLine("You will need to pay ${0}", fare);
+            Console.ReadKey();
 
         }
 
         public static double CalculateFare(double distance)
         {
             //YOUR CODE HERE
-            return 0;
+            
+            double fare;
+            if (distance >= 0 && distance <= 0.5)
+            {
+                fare = 2.4;
+            }
+            else if (distance > 0.5 && distance <= 9)
+            {
+                fare = 2.4 + (Math.Ceiling((distance - 0.5) * 10)*1/ 10 * 10 * 0.04); //the 1/10*10* is a bit redundant, but I have to do it to show the relationship between '10 which is derived drom 1000m/100' and '1/10 from the rounding up which has to be multiplied with 1/10' 
+            }
+            else if (distance > 9)
+            {
+                fare = 2.4 + (8.5 * 10 * 0.04) + (Math.Ceiling((distance - 9) * 10)*1/10*10 * 0.05);//idem ditto
+            }
+            else
+            {
+                fare = 99999;//just for testing
+            }
+        
+
+            return fare;
+          
+
 
 
 
