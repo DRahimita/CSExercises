@@ -2,58 +2,65 @@ using System;
 
 namespace CSExercises
 {
-    //3.	Write a program that would compute the grade for a mark that the student gets.  The program should take an integer number between 0 and 100 and print the following:
-    //You scored 73 marks which is B grade.
-    //where 73 is the input and B is calculated by the program.  Use the following table for computing the grades:
+    //ABC Taxi Company has the following meter charges based on the kilometres travelled.
 
-    //Marks         Grade
-    //80 to 100	    A
-    //60 to 79	    B
-    //40 to 59	    C
-    //0 to 40	    F
-    //< 0  	        **Error**
-    //> 100	        **Error**
+    //Minimum charge:  $2.40  (first 0.5 km no additional charges apply)
+    //For the next 8.5 kms the rate is 4 cents for every 100 meters
+    //After that:   5 cents for evey 100 meters
 
-    public class ExC3
+    //In the above example you should assume that the meter falls every 100 meters.So assume that if the distance travelled(i.e.input) is 12.13 km then it is rounded to 12.20 and the cost would be:
+
+    //$ 2.40 (first 0.5 km) +
+    //$ 85 * 0.04 (next 8.5 km) +
+    //$ (122 -90) * 0.05 (for distance over 9.0 km)
+    //=  $7.40
+
+
+    public class ExC4
     {
         public static void Main(string[] args)
         {
-            Console.Write("Please enter your mark: ");
-            int mark = Convert.ToInt32(Console.ReadLine());
 
-            string grade = CalculateGrade(mark);
-            Console.WriteLine("You scored {0} marks which is {1} grade.", mark, grade);
+            //Your code here
+            Console.Write("How far have you traveled (in km)?");
+            double distance = Convert.ToDouble(Console.ReadLine());
 
+            double fare = CalculateFare(distance);
+
+            Console.WriteLine("You will need to pay ${0}", fare);
             Console.ReadKey();
 
         }
 
-        public static string CalculateGrade(int mark)
+        public static double CalculateFare(double distance)
         {
             //YOUR CODE HERE
-            string grade;
-            if ((mark>=80)&&(mark<=100))
+            
+            double fare;
+            if (distance >= 0 && distance <= 0.5)
             {
-                grade = "A";
+                fare = 2.4;
             }
-            else if((mark>=60)&&(mark<80))
+            else if (distance > 0.5 && distance <= 9)
             {
-                grade = "B";
+                fare = 2.4 + (Math.Ceiling((distance - 0.5) * 10)*1/ 10 * 10 * 0.04); //the 1/10*10* is a bit redundant, but I have to do it to show the relationship between '10 which is derived drom 1000m/100' and '1/10 from the rounding up which has to be multiplied with 1/10' 
             }
-            else if ((mark >= 40) && (mark < 60))
+            else if (distance > 9)
             {
-                grade = "C";
+                fare = 2.4 + (8.5 * 10 * 0.04) + (Math.Ceiling((distance - 9) * 10)*1/10*10 * 0.05);//idem ditto
             }
-            else if ((mark >= 0) && (mark < 40))
+            else
             {
-                grade = "F";
+                fare = 99999;
             }
-            else 
-            {
-                grade = "**ERROR**";
-            }
-                
-            return grade;
+        
+
+            return fare;
+          
+
+
+
+
         }
     }
 }
